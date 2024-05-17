@@ -264,7 +264,7 @@ a.left_nav_link_group_title {
   position: relative;
   overflow: hidden;
   justify-content: center;
-  align-items: flex-end;
+  align-items: start;
 }
 
 .theme_info {
@@ -298,8 +298,8 @@ img.site_info_group_back_cover {
 }
 
 .site_info_group_title {
-  font-size: 24px;
-  font-weight: normal;
+  font-size: 32px;
+  font-weight: bold;
   margin: 0;
   z-index: 1;
   color: var(--heo-white);
@@ -311,7 +311,7 @@ img.site_info_group_back_cover {
   width: fit-content;
   margin: 0 2rem;
   gap: 8px;
-  align-items: flex-end;
+  align-items: start;
 }
 
 span.site_info_group_desc {
