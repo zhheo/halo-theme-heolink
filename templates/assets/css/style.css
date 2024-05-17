@@ -125,13 +125,14 @@ img.link_group_content_item_logo_img {
   height: 60px;
   border-radius: 60px;
   overflow: hidden;
-  margin: 8px;
 }
 
 .link_group_content_item {
   display: flex;
   justify-content: space-between;
   width: 100%;
+  align-items: center;
+  padding: 0 0.5rem;
 }
 
 .link_group_content {
@@ -144,6 +145,7 @@ img.link_group_content_item_logo_img {
 a.link_group_content_link {
   display: flex;
   width: calc(100% / 4 - 8px);
+  height: 80px;
   color: var(--heo-fontcolor);
   border-radius: 12px;
   background: var(--heo-card-bg);

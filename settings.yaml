@@ -36,3 +36,4 @@ spec:
     - $formkit: "text"
       name: "icon"
       label: "图标"
+      help: "图标库：https://remixicon.com/ 需要带'ri-'前缀"
