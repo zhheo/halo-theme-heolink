@@ -9,13 +9,13 @@ spec:
     website: "https://github.com/zhheo"
   description: 基于Halo的导航主题
   logo: "https://bu.dusays.com/2024/05/16/66457a55ce6e3.png"
-  homepage: "https://github.com/halo-dev/theme-starter#readme"
-  repo: "https://github.com/halo-dev/theme-starter"
-  issues: "https://github.com/halo-dev/theme-starter/issues"
+  homepage: ""https://github.com/zhheo/halo-theme-heolink#readme"
+  repo: "https://github.com/zhheo/halo-theme-heolink"
+  issues: ""https://github.com/zhheo/halo-theme-heolink/issues"
   settingName: "theme-heolink-setting"
   configMapName: "theme-heolink-configMap"
   version: "1.0.0"
   requires: ">=2.0.0"
   license:
-    - name: "GPL-3.0"
-      url: "https://github.com/halo-dev/plugin-starter/blob/main/LICENSE"
+    - name: "Apache-2.0"
+      url: "https://github.com/zhheo/halo-theme-heolink/LICENSE"
