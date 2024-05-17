@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: html(head = null,content = ~{::content})}">
 <th:block th:fragment="content">
-  <div class="linkPage">
+  <div class="linkPage" th:if="${pluginFinder.available('PluginLinks')}">
     <div class="nav">
       <a class="show_nav" onclick="showNav()" href="javascript:void(0)"><i class="ri-menu-line"></i>
       </a>
@@ -88,6 +88,8 @@
     </div>
 
   </div>
+
+  <h1 th:if="${pluginFinder.available('PluginLinks') == false}" class="no_data">请安装链接管理插件：https://www.halo.run/store/apps/app-hfbQg</h1>
 
 </th:block>
 
