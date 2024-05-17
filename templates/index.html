@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: html(head = null,content = ~{::content})}">
+<th:block th:fragment="content">
+  <div class="linkPage">
+    <div class="nav">
+      <a class="show_nav" onclick="showNav()" href="javascript:void(0)"><i class="ri-menu-line"></i>
+      </a>
+
+      <span class="nav_site_name" th:text="${site.title}"></span>
+    </div>
+
+    <div class="nav_list" id="nav_list">
+      <div class="site_logo">
+        <img th:src="${site.logo ?: #theme.assets('/images/logo_cover.jpg')}" alt="logo" />
+      </div>
+      <div class="left_nav_group">
+        <th:block th:each="group : ${linkFinder.groupBy()}">
+          <div class="left_nav_item" th:if="${group.spec.displayName != ''}">
+            <a class="left_nav_link_group_title" th:href="${'#' + group.spec.displayName}">
+              <i th:class="${#annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill')}"></i>
+              <span th:text="${group.spec.displayName}"></span>
+            </a>
+          </div>
+        </th:block>
+      </div>
+
+      <div class="footer">
+        <div class="footer_icp_group">
+          <a href="https://beian.miit.gov.cn/">
+            <span th:text="${theme.config.info.index_icp}" th:if="${theme.config.info.index_icp}"></span>
+          </a>
+          <a href="https://beian.mps.gov.cn/#/query/webSearch" th:if="${theme.config.info.index_icp2}">
+            <span th:text="${theme.config.info.index_icp2}"></span>
+          </a>
+        </div>
+
+        <div class="footer_console">
+          <a href="/console/login" target="_blank" title="管理后台">
+            <i class="ri-settings-4-fill"></i>
+          </a>
+          <a href="https://zhheo.com/" target="_blank" class="theme_info" title="Theme HeoLink by Halo">Theme HeoLink by Halo</a>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="linkPage_content">
+      <div class="site_info_group">
+        <div class="site_info_text">
+          <h1 class="site_info_group_title" th:text="${site.title}"></h1>
+          <span class="site_info_group_desc" th:text="${site.subtitle}"></span>
+        </div>
+
+        <img class="site_info_group_back_cover"
+          th:src="${theme.config.style.cover_img ?: #theme.assets('/images/index_cover.jpg')}" alt="cover" />
+      </div>
+
+      <th:block th:each="group : ${linkFinder.groupBy()}">
+        <div class="link_group">
+          <div class="link_group_title_content" th:if="${group.spec.displayName != ''}" >
+            <i th:class="${#annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill')}"></i>
+            <h2 class="link_group_title" th:text="${group.spec.displayName}"
+              th:id="${group.spec.displayName}"></h2>
+          </div>
+
+          <div class="link_group_content">
+            <a class="link_group_content_link" th:each="link : ${group.links}" :key="i" th:href="${link.spec.url}"
+              target="_blank">
+              <div class="link_group_content_item">
+                <div class="link_group_content_item_logo">
+                  <img class="link_group_content_item_logo_img"
+                    th:src="${link.spec.logo ?: ('https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=' + link.spec.displayName)}"
+                    th:alt="${link.spec.displayName}" />
+                </div>
+                <div class="link_group_content_item_info">
+                  <div class="link_group_content_item_info_content">
+                    <p class="link_group_content_item_info_content_title" th:text="${link.spec.displayName}"></p>
+                    <p class="link_group_content_item_info_content_description" th:text="${link.spec.description}"></p>
+                  </div>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </th:block>
+    </div>
+
+  </div>
+
+</th:block>
+
+</html>

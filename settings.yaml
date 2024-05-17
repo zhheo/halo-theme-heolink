@@ -1,0 +1,42 @@
+apiVersion: v1alpha1
+kind: Setting
+metadata:
+  name: theme-heolink-setting
+spec:
+  forms:
+    - group: info
+      label: 信息
+      formSchema:
+        - $formkit: text
+          name: index_icp
+          label: 备案号
+          help: 在中国大陆可以访问的网站应填写备案号
+        - $formkit: text
+          name: index_icp2
+          label: 公安备案
+          help: 在中国大陆可以访问的网站应填写公安备案号
+    - group: style
+      label: 样式
+      formSchema:
+        - $formkit: attachment
+          name: cover_img
+          label: 首页背景图片
+        - $formkit: color
+          name: background_color
+          label: 背景颜色
+          value: "#f2f2f2"
+
+---
+
+apiVersion: v1alpha1
+kind: AnnotationSetting
+metadata:
+  name: link-group-setting
+spec:
+  targetRef:
+    group: core.halo.run
+    kind: LinkGroup
+  formSchema:
+    - $formkit: "text"
+      name: "icon"
+      label: "图标"
