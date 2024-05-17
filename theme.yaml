@@ -11,7 +11,7 @@ spec:
   logo: "https://bu.dusays.com/2024/05/16/66457a55ce6e3.png"
   homepage: ""https://github.com/zhheo/halo-theme-heolink#readme"
   repo: "https://github.com/zhheo/halo-theme-heolink"
-  issues: ""https://github.com/zhheo/halo-theme-heolink/issues"
+  issues: "https://github.com/zhheo/halo-theme-heolink/issues"
   settingName: "theme-heolink-setting"
   configMapName: "theme-heolink-configMap"
   version: "1.0.0"
