@@ -135,6 +135,12 @@ img.link_group_content_item_logo_img {
   padding: 0 0.5rem;
 }
 
+.footer_icp_group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .link_group_content {
   width: 100%;
   display: flex;
