@@ -15,7 +15,7 @@ spec:
   settingName: "theme-heolink-setting"
   configMapName: "theme-heolink-configMap"
   version: "1.0.0"
-  requires: ">=2.0.0"
+  requires: ">=2.15.0"
   license:
     - name: "Apache-2.0"
       url: "https://github.com/zhheo/halo-theme-heolink/LICENSE"
