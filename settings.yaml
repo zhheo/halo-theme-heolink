@@ -2,6 +2,10 @@ apiVersion: v1alpha1
 kind: Setting
 metadata:
   name: theme-heolink-setting
+  annotations:
+    # Add supports for Halo App Store
+    # https://halo.run/store/apps/app-acJAD
+    "store.halo.run/app-id": "app-acJAD"
 spec:
   forms:
     - group: info
