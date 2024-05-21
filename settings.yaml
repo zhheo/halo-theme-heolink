@@ -40,6 +40,7 @@ spec:
       formSchema:
         - $formkit: attachment
           name: cover_img
+          value: /themes/theme-heolink/assets/images/index_cover2.jpg
           label: 首页背景图片
 
 ---

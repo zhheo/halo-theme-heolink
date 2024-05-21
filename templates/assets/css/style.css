@@ -259,7 +259,7 @@ a.left_nav_link_group_title {
   display: flex;
   flex-direction: column;
   width: 100%;
-  height: 260px;
+  min-height: 260px;
   background: var(--heo-secondbg);
   border-radius: 16px;
   position: relative;
