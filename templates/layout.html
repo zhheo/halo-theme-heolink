@@ -12,16 +12,26 @@
       content="width=device-width, initial-scale=1, maximum-scale=2"
     />
     <title th:text="${site.title}"></title>
-    <link rel="stylesheet" th:href="@{/assets/css/style.min.css}" />
+    <link rel="stylesheet" th:href="@{/assets/css/style.min.css?v={version}(version=${theme.spec.version})}" />
     <link th:href="@{/assets/fonts/remixicon.css}" rel="stylesheet">
-    <script th:src="@{/assets/js/main.min.js}"></script>
+    <script th:src="@{/assets/js/main.min.js?v={version}(version=${theme.spec.version})}"></script>
+    <script th:src="@{/assets/js/pjax.min.js}"></script>
     <th:block th:if="${head != null}">
       <th:block th:replace="${head}" />
     </th:block>
   </head>
   <body th:style="'background-color: '+${theme.config.style.background_color ?: '#f2f2f2'}">
     <section>
-      <th:block th:replace="${content}" />
+      <div class="heolink_site">
+        <th:block
+        th:replace="~{widgets/nav}"
+      />
+      <div id="web_content">
+        <th:block th:replace="${content}" />
+      </div>
+
+      </div>
+
     </section>
   </body>
 </html>

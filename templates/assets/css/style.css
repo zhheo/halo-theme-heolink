@@ -188,9 +188,20 @@ p.link_group_content_item_info_content_description {
   text-overflow: ellipsis;
 }
 
+.heolink_site {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+
 .linkPage {
   display: flex;
   height: 100vh;
+  flex: 1;
+}
+
+a.show_nav i {
+  font-size: 18px;
 }
 
 .nav_list {
@@ -210,7 +221,6 @@ p.link_group_content_item_info_content_description {
   flex-direction: column;
   flex: 1;
   padding: 1rem;
-  overflow-y: scroll;
   gap: 1.2rem;
   background: var(--heo-card-bg);
 }
@@ -260,6 +270,7 @@ a.left_nav_link_group_title {
   flex-direction: column;
   width: 100%;
   min-height: 260px;
+  max-height: 300px;
   background: var(--heo-secondbg);
   border-radius: 16px;
   position: relative;
@@ -295,7 +306,7 @@ img.site_info_group_back_cover {
   align-items: center;
   padding: 0 1rem;
   display: none;
-  gap: 8px;
+  gap: 1rem;
 }
 
 .site_info_group_title {
@@ -388,6 +399,73 @@ span.site_info_group_desc {
   font-size: 20px;
 }
 
+.post_content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 1rem;
+  gap: 1.2rem;
+  background: var(--heo-card-bg);
+  align-items: center;
+}
+
+.postPage_cover {
+  width: 100%;
+  object-fit: cover;
+  border-radius: 12px;
+  max-height: 500px;
+  max-width: 900px;
+}
+
+article {
+  max-width: 900px;
+}
+
+article h2 {
+  margin-top: 2rem;
+  margin-bottom: 0.5rem;
+  font-size: 24px;
+}
+
+article p {
+  font-size: 16px;
+}
+
+.post_bar {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: 100%;
+  position: sticky;
+}
+
+.post_bar h1 {
+  line-height: 1;
+  margin: 0;
+  font-size: 20px;
+}
+
+.post_bar i {
+  font-size: 24px;
+  opacity: 0.6;
+}
+
+img.post_bar_avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 32px;
+  margin-left: auto;
+}
+
+#web_content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  overflow-y: scroll;
+  gap: 1.2rem;
+  background: var(--heo-card-bg);
+}
+
 @media (hover:hover) {
   a.link_group_content_link:hover {
     background: var(--heo-theme);
@@ -443,6 +521,11 @@ span.site_info_group_desc {
 
   .site_logo {
     margin-top: calc(1rem + 60px);
+    max-height: 200px;
+  }
+
+  .post_bar {
+    margin-top: 60px;
   }
 }
 

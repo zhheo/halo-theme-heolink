@@ -2,9 +2,7 @@
 <html xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: html(head = null,content = ~{::content})}">
 <th:block th:fragment="content">
   <div class="linkPage" th:if="${pluginFinder.available('PluginLinks')}">
-    <th:block
-    th:replace="~{widgets/nav}"
-  />
+
 
     <div class="linkPage_content">
       <div class="site_info_group">
@@ -22,7 +20,7 @@
       />
 
       <th:block th:each="group : ${linkFinder.groupBy()}">
-        <div class="link_group">
+        <div class="link_group" th:if="${#lists.size(group.links) > 0}">
           <div class="link_group_title_content" th:if="${group.spec.displayName != ''}" >
             <i th:class="${#annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill')}"></i>
             <h2 class="link_group_title" th:text="${group.spec.displayName}"
@@ -30,13 +28,13 @@
           </div>
 
           <div class="link_group_content">
-            <a class="link_group_content_link" th:each="link : ${group.links}" :key="i" th:href="${link.spec.url}"
-              target="_blank">
+            <a class="link_group_content_link" th:each="link : ${group.links}" :key="i" th:href="${#annotations.contains(link, 'to_post') ? postFinder.getByName(#annotations.get(link, 'to_post')).status.permalink : link.spec.url}"
+            th:target="${#annotations.contains(link, 'to_post') ? '' : '_blank'}">
               <div class="link_group_content_item">
                 <div class="link_group_content_item_logo">
                   <img class="link_group_content_item_logo_img"
                     th:src="${link.spec.logo ?: ('https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=' + link.spec.displayName)}"
-                    th:alt="${link.spec.displayName}" />
+                    th:alt="${link.spec.displayName}" loading="lazy"/>
                 </div>
                 <div class="link_group_content_item_info">
                   <div class="link_group_content_item_info_content">

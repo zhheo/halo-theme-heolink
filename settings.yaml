@@ -58,3 +58,19 @@ spec:
       name: "icon"
       label: "图标"
       help: "图标库：https://remixicon.com/ 需要带'ri-'前缀"
+
+---
+
+apiVersion: v1alpha1
+kind: AnnotationSetting
+metadata:
+  name: link-item-setting-heolink
+spec:
+  targetRef:
+    group: core.halo.run
+    kind: Link
+  formSchema:
+    - $formkit: postSelect
+      name: to_post
+      label: 关联的文章
+      help: "当有关联的文章时，则跳转到对应文章，而不是直接访问地址"

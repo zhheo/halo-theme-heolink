@@ -1,10 +1,20 @@
 <!DOCTYPE html>
-<html
-  xmlns:th="https://www.thymeleaf.org"
-  th:replace="~{layout :: html(head = null,content = ~{::content})}"
->
-  <th:block th:fragment="content">
-    <h1 th:text="${post.spec.title}"></h1>
+<html xmlns:th="https://www.thymeleaf.org" th:replace="~{layout :: html(head = null,content = ~{::content})}">
+
+<th:block th:fragment="content">
+  <div class="post_content">
+    <div class="post_bar">
+      <a href="/" class="post_bar_back">
+        <i class="ri-arrow-left-wide-line"></i>
+      </a>
+      <h1 th:text="${post.spec.title}"></h1>
+      <img th:if="${post.owner.avatar != ''}" th:src="@{${post.owner.avatar} ?: @{/assets/images/logo.jpg} }" th:alt="${post.owner.displayName}" class="post_bar_avatar" />
+    </div>
+
+      <img th:if="${post.spec.cover != ''}" th:src="${post.spec.cover}" th:alt="${post.spec.title}" class="postPage_cover" />
     <article th:utext="${post.content.content}"></article>
-  </th:block>
+  </div>
+</th:block>
+
+
 </html>
