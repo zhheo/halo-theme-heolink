@@ -15,6 +15,22 @@ spec:
           name: index_icp2
           label: 公安备案
           help: 在中国大陆可以访问的网站应填写公安备案号
+        - $formkit: select
+          name: search_engine
+          label: 搜索引擎
+          value: ""
+          help: 在首页封面下方的搜索框跳转的搜索引擎
+          options: 
+            - label: 关闭
+              value: ""
+            - label: 百度
+              value: "https://www.baidu.com/s?wd="
+            - label: 谷歌
+              value: "https://www.google.com/search?q="
+            - label: 必应
+              value: "https://cn.bing.com/search?q="
+            - label: 搜狗
+              value: "https://www.sogou.com/web?query="
     - group: style
       label: 样式
       formSchema:
@@ -27,7 +43,7 @@ spec:
 apiVersion: v1alpha1
 kind: AnnotationSetting
 metadata:
-  name: link-group-setting
+  name: link-group-setting-heolink
 spec:
   targetRef:
     group: core.halo.run

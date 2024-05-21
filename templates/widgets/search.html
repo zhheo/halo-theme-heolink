@@ -1,0 +1,32 @@
+<div class="widget_search" th:if="${theme.config.info.search_engine != ''}" >
+  <form id="searchForm" method="get">
+    <input type="text" id="searchInput" placeholder="输入搜索内容...">
+    <button type="submit">
+      <i class="ri-search-2-line"></i>
+    </button>
+  </form>
+  
+  <script th:inline="javascript">
+    //<![CDATA[
+    // 使用 Thymeleaf 变量
+    var searchEngineUrl = /*[[${theme.config.info.search_engine}]]*/ 'defaultURL';
+  
+    // DOM 完全加载后运行
+    document.addEventListener('DOMContentLoaded', function() {
+        // 解析 URL 来找到基础路径和参数名
+        var urlParts = searchEngineUrl.split('?');
+        var baseUrl = urlParts[0];
+        var paramName = urlParts.length > 1 ? urlParts[1].split('=')[0] : '';
+  
+        // 设置表单的 action 和输入框的 name
+        var form = document.getElementById('searchForm');
+        var input = document.getElementById('searchInput');
+  
+        form.action = baseUrl + '?';
+        input.name = paramName;
+    });
+    //]]>
+  </script>
+  
+</div>
+

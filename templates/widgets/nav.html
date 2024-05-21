@@ -1,0 +1,42 @@
+<div class="nav">
+  <a class="show_nav" onclick="showNav()" href="javascript:void(0)"><i class="ri-menu-line"></i>
+  </a>
+
+  <span class="nav_site_name" th:text="${site.title}"></span>
+</div>
+
+<div class="nav_list" id="nav_list">
+  <a class="site_logo" href="#">
+    <img th:src="${site.logo ?: #theme.assets('/images/logo_cover.jpg')}" alt="logo" />
+  </a>
+  <div class="left_nav_group">
+    <th:block th:each="group : ${linkFinder.groupBy()}">
+      <div class="left_nav_item" th:if="${group.spec.displayName != ''}">
+        <a class="left_nav_link_group_title" th:href="${'#' + group.spec.displayName}">
+          <i th:class="${#annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill')}"></i>
+          <span th:text="${group.spec.displayName}"></span>
+        </a>
+      </div>
+    </th:block>
+  </div>
+
+  <div class="footer">
+    <div class="footer_icp_group">
+      <a href="https://beian.miit.gov.cn/">
+        <span th:text="${theme.config.info.index_icp}" th:if="${theme.config.info.index_icp}"></span>
+      </a>
+      <a href="https://beian.mps.gov.cn/#/query/webSearch" th:if="${theme.config.info.index_icp2}">
+        <span th:text="${theme.config.info.index_icp2}"></span>
+      </a>
+    </div>
+
+    <div class="footer_console">
+      <a href="/console/login" target="_blank" title="管理后台">
+        <i class="ri-settings-4-fill"></i>
+      </a>
+      <a href="https://github.com/zhheo/halo-theme-heolink" target="_blank" class="theme_info" title="Theme HeoLink by Halo">Theme HeoLink by Halo</a>
+    </div>
+
+  </div>
+
+</div>

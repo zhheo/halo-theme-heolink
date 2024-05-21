@@ -211,7 +211,7 @@ p.link_group_content_item_info_content_description {
   flex: 1;
   padding: 1rem;
   overflow-y: scroll;
-  gap: 1rem;
+  gap: 1.2rem;
   background: var(--heo-card-bg);
 }
 
@@ -248,6 +248,7 @@ a.left_nav_link_group_title {
   display: flex;
   gap: 8px;
   justify-content: center;
+  font-size: 16px;
 }
 
 .link_group_title {
@@ -335,6 +336,8 @@ span.site_info_group_desc {
   display: flex;
   align-items: center;
   gap: 4px;
+  font-size: 18px;
+  line-height: 1;
 }
 
 .footer {
@@ -349,6 +352,42 @@ span.site_info_group_desc {
   color: var(--heo-fontcolor);
 }
 
+#searchForm {
+  width: 100%;
+  display: flex;
+  position: relative;
+}
+
+#searchForm input {
+  display: flex;
+  flex: 1;
+  height: 44px;
+  border-radius: 44px;
+  border: var(--style-border-always);
+  padding: 0px 12px;
+  padding-left: 16px;
+}
+
+#searchForm input:focus-visible {
+  border: var(--style-border-hover-always);
+  outline: none;
+}
+
+#searchForm button {
+  position: absolute;
+  right: 8px;
+  height: 44px;
+  width: 44px;
+  background: none;
+  color: var(--heo-fontcolor);
+  border: none;
+  cursor: pointer;
+}
+
+#searchForm button i {
+  font-size: 20px;
+}
+
 @media (hover:hover) {
   a.link_group_content_link:hover {
     background: var(--heo-theme);
@@ -358,6 +397,10 @@ span.site_info_group_desc {
 
   a.left_nav_link_group_title:hover {
     background: var(--heo-secondbg);
+  }
+
+  #searchForm button:hover {
+    color: var(--heo-theme);
   }
 }
 
