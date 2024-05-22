@@ -19,7 +19,7 @@
         th:replace="~{widgets/search}"
       />
 
-      <th:block th:each="group : ${linkFinder.groupBy()}">
+      <th:block th:each="group : ${linkFinder.groupBy()}" th:if="${#annotations.getOrDefault(group, 'show_on_heolink', 'true') == 'true'}">
         <div class="link_group" th:if="${#lists.size(group.links) > 0}">
           <div class="link_group_title_content" th:if="${group.spec.displayName != ''}" >
             <i th:class="${#annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill')}"></i>

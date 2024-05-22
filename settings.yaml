@@ -54,10 +54,21 @@ spec:
     group: core.halo.run
     kind: LinkGroup
   formSchema:
-    - $formkit: "text"
-      name: "icon"
-      label: "图标"
+    - $formkit: text
+      name: icon
+      label: 图标
+      value: 'ri-'
       help: "图标库：https://remixicon.com/ 需要带'ri-'前缀"
+    - $formkit: radio
+      name: show_on_heolink
+      label: 显示在HeoLink中
+      help: 控制此分组是否显示在HeoLink中
+      value: "true"
+      options: 
+        - label: 显示
+          value: "true"
+        - label: 不显示
+          value: "false"
 
 ---
 
