@@ -1,5 +1,3 @@
-# HeoLink
-
 <p align="center">
     <a href="https://halo.zhheo.com/" target="_blank" rel="noopener noreferrer">
         <img src="/imgs/st.jpg" alt="icon"/>
