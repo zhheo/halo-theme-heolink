@@ -2,7 +2,7 @@
 
 <p align="center">
     <a href="https://halo.zhheo.com/" target="_blank" rel="noopener noreferrer">
-        <img width="100" src="/templates/assets/images/logo.jpg" alt="heolink logo" />
+        <img src="/imgs/st.jpg" alt="icon"/>
     </a>
 </p>
 
@@ -13,3 +13,17 @@
 [预览地址](https://halo.zhheo.com/)
 
 ![](/imgs/quickshot.jpg)
+
+## 特性
+
+此主题需要安装Halo的官方插件“链接管理”然后进行操作。
+
+![](https://img.zhheo.com/i/2024/05/27/66540be183142.webp)
+
+自定义分组图标和控制分组显示：
+
+![](https://img.zhheo.com/i/2024/05/27/66540c31be796.webp)
+
+链接关联文章：
+
+![](https://img.zhheo.com/i/2024/05/27/66540c7029c2f.webp)
