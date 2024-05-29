@@ -28,14 +28,19 @@
           </div>
 
           <div class="link_group_content">
-            <a class="link_group_content_link" th:each="link : ${group.links}" :key="i" th:href="${#annotations.contains(link, 'to_post') ? postFinder.getByName(#annotations.get(link, 'to_post')).status.permalink : link.spec.url}"
+            <a class="link_group_content_link" th:each="link : ${group.links}" :key="i" th:with="item_url = ${#annotations.contains(link, 'to_post') ? postFinder.getByName(#annotations.get(link, 'to_post')).status.permalink : link.spec.url}" th:href="${item_url}"
             th:target="${#annotations.contains(link, 'to_post') ? '' : '_blank'}">
               <div class="link_group_content_item">
                 <div class="link_group_content_item_logo">
                   <img class="link_group_content_item_logo_img"
-                    th:src="${link.spec.logo ?: ('https://ui-avatars.com/api/?background=0D8ABC&color=fff&name=' + link.spec.displayName)}"
-                    th:alt="${link.spec.displayName}" loading="lazy"/>
+                       th:with="icon_api= ${theme.config.info.icon_api ?: 'https://api.zhheo.com/favicon/get.php?url={url}'}, 
+                                 item_url=${item_url}, 
+                                 isRelativeUrl=${item_url.startsWith('/')}"
+                       th:src="${isRelativeUrl ? site.logo ?: #theme.assets('/images/logo_cover.jpg') : icon_api.replace('{url}', item_url)}"
+                       th:alt="${link.spec.displayName}" loading="lazy"/>
                 </div>
+                
+                             
                 <div class="link_group_content_item_info">
                   <div class="link_group_content_item_info_content">
                     <p class="link_group_content_item_info_content_title" th:text="${link.spec.displayName}"></p>

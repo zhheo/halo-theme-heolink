@@ -35,6 +35,11 @@ spec:
               value: "https://cn.bing.com/search?q="
             - label: 搜狗
               value: "https://www.sogou.com/web?query="
+        - $formkit: text
+          name: icon_api
+          label: 图标API
+          value: "https://api.zhheo.com/favicon/get.php?url={url}"
+          help: "默认的API服务器不保证可用性，仅供演示使用。{url}为链接的地址。搭建自有API方法：https://github.com/owen0o0/getFavicon"
     - group: style
       label: 样式
       formSchema:
