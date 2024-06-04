@@ -96,6 +96,10 @@ h2 {
   margin: 0;
 }
 
+* {
+  box-sizing: border-box;
+}
+
 *::-webkit-scrollbar {
   width: 8px;
   height: 8px;
@@ -270,9 +274,14 @@ a.left_nav_link_group_title {
   border-radius: 12px;
   transition: 0.3s;
   display: flex;
-  gap: 8px;
-  justify-content: center;
+  gap: 24px;
+  justify-content: left;
   font-size: 16px;
+  align-items: center;
+}
+
+a.left_nav_link_group_title i {
+  font-size: 20px;
 }
 
 .link_group_title {
@@ -355,6 +364,7 @@ span.site_info_group_desc {
   justify-content: center;
   align-items: center;
   overflow-y: scroll;
+  padding: 0 6px 0 12px;
 }
 
 .link_group_title_content {
@@ -496,6 +506,7 @@ a.post_bar_back {
   overflow-y: scroll;
   gap: 1.2rem;
   background: var(--heo-card-bg);
+  padding-bottom: 1rem;
 }
 
 .search-group {
