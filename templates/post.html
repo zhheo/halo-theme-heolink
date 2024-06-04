@@ -7,11 +7,14 @@
       <a href="/" class="post_bar_back">
         <i class="ri-arrow-left-wide-line"></i>
       </a>
-      <h1 th:text="${post.spec.title}"></h1>
       <img th:if="${post.owner.avatar != ''}" th:src="@{${post.owner.avatar} ?: @{/assets/images/logo.jpg} }" th:alt="${post.owner.displayName}" class="post_bar_avatar" />
     </div>
+    <div class="post_top_info">
+      <h1 class="post_title" th:text="${post.spec.title}"></h1>
+      <span class="post_date" th:text="${#dates.format(post.metadata.creationTimestamp, 'yyyy-MM-dd')}"></span>
+    </div>
 
-      <img th:if="${post.spec.cover != ''}" th:src="${post.spec.cover}" th:alt="${post.spec.title}" class="postPage_cover" />
+    <img th:if="${post.spec.cover != ''}" th:src="${post.spec.cover}" th:alt="${post.spec.title}" class="postPage_cover" />
     <article th:utext="${post.content.content}"></article>
   </div>
 </th:block>
