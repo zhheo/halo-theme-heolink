@@ -22,7 +22,7 @@
   </head>
   <body th:style="'background-color: '+${theme.config.style.background_color ?: '#f2f2f2'}">
     <section>
-      <div class="heolink_site">
+      <div class="heolink_site"  th:if="${pluginFinder.available('PluginLinks')}">
         <th:block
         th:replace="~{widgets/nav}"
       />
@@ -33,5 +33,6 @@
       </div>
 
     </section>
+    <h1 th:if="${pluginFinder.available('PluginLinks') == false}" class="no_data">请安装链接管理插件：https://www.halo.run/store/apps/app-hfbQg</h1>
   </body>
 </html>
