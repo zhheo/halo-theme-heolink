@@ -38,7 +38,7 @@
                                  isRelativeUrl=${item_url.startsWith('/')},
                                  custom_logo=${link.spec.logo},
                                  used_logo= ${custom_logo ?: icon_api.replace('{url}', item_url)},
-                                 used_site_logo = ${custom_logo ?: (site.logo ?: #theme.assets('/images/logo_cover.jpg'))}
+                                 used_site_logo = ${custom_logo ?: (site.favicon ?: #theme.assets('/images/logo_cover.jpg'))}
                                 ",
                        th:src="${isRelativeUrl ? used_site_logo : used_logo}"
                        th:alt="${link.spec.displayName}" loading="lazy"/>
