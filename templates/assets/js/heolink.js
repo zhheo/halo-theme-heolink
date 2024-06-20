@@ -49,5 +49,20 @@ var heolink = {
       // 清除存储的任务
       localStorage.removeItem('targetId');
     }
+  },
+
+  listenNavScroll: function() {
+    const scrollableElement = document.getElementById('left_nav_group');
+
+    scrollableElement.addEventListener('scroll', function () {
+      // 在滚动时添加显示滚动条的类
+      scrollableElement.classList.add('show-scrollbar');
+      
+      // 设定一个定时器，在停止滚动后隐藏滚动条
+      clearTimeout(scrollableElement.hideScrollbarTimeout);
+      scrollableElement.hideScrollbarTimeout = setTimeout(() => {
+        scrollableElement.classList.remove('show-scrollbar');
+      }, 500); // 停止滚动后500ms隐藏滚动条
+    });
   }
 };

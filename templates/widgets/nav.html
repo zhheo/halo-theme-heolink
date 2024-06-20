@@ -9,7 +9,7 @@
   <a class="site_logo" href="/#">
     <img th:src="${site.logo ?: #theme.assets('/images/logo_cover.jpg')}" alt="logo" />
   </a>
-  <div class="left_nav_group">
+  <div class="left_nav_group" id="left_nav_group">
     <th:block th:each="group : ${linkFinder.groupBy()}">
       <div class="left_nav_item" th:if="${group.spec.displayName != ''}">
         <a class="left_nav_link_group_title" th:data-target="${group.spec.displayName}" href="javascript:void(0)">

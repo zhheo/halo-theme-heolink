@@ -11,8 +11,10 @@ document.addEventListener('DOMContentLoaded', function () {
   })
 
   heolink.initNavLink();
+  heolink.listenNavScroll();
 });
 
 document.addEventListener('pjax:complete', function() {
   heolink.initNavLink();
+  heolink.listenNavScroll();
 });

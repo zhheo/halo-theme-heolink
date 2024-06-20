@@ -206,7 +206,6 @@ p.link_group_content_item_info_content_description {
 
 .linkPage {
   display: flex;
-  height: 100vh;
   flex: 1;
 }
 
@@ -367,6 +366,14 @@ span.site_info_group_desc {
   padding: 0 6px 0 12px;
 }
 
+.left_nav_group::-webkit-scrollbar {
+  display: none;
+}
+
+.left_nav_group.show-scrollbar::-webkit-scrollbar {
+  display: contents;
+}
+
 .link_group_title_content {
   display: flex;
   align-items: center;
@@ -511,7 +518,6 @@ a.post_bar_back {
   overflow-y: scroll;
   gap: 1.2rem;
   background: var(--heo-card-bg);
-  padding-bottom: 2rem;
 }
 
 .search-group {
