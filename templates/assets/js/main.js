@@ -9,4 +9,10 @@ document.addEventListener('DOMContentLoaded', function () {
       "#web_content"
     ]
   })
+
+  heolink.initNavLink();
+});
+
+document.addEventListener('pjax:complete', function() {
+  heolink.initNavLink();
 });

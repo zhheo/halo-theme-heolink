@@ -433,17 +433,20 @@ span.site_info_group_desc {
 }
 
 .postPage_cover {
-  width: 100%;
+  width: calc(100% - 48px);
   object-fit: cover;
   border-radius: 12px;
   max-height: 500px;
-  max-width: 900px;
+  max-width: calc(900px - 48px);
 }
 
 .post_top_info {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 100%;
+  max-width: 900px;
+  padding: 0 24px;
 }
 
 span.post_date {
@@ -452,7 +455,9 @@ span.post_date {
 
 article {
   max-width: 900px;
+  width: 100%;
   margin-bottom: 1rem;
+  padding: 0 24px;
 }
 
 article h2 {
@@ -506,7 +511,7 @@ a.post_bar_back {
   overflow-y: scroll;
   gap: 1.2rem;
   background: var(--heo-card-bg);
-  padding-bottom: 1rem;
+  padding-bottom: 2rem;
 }
 
 .search-group {

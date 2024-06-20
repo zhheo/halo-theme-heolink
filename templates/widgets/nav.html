@@ -1,7 +1,7 @@
 <div class="nav">
-  <a class="show_nav" onclick="showNav()" href="javascript:void(0)"><i class="ri-menu-line"></i>
+  <a class="show_nav" onclick="showNav()" href="javascript:void(0)">
+    <i class="ri-menu-line"></i>
   </a>
-
   <span class="nav_site_name" th:text="${site.title}"></span>
 </div>
 
@@ -12,7 +12,7 @@
   <div class="left_nav_group">
     <th:block th:each="group : ${linkFinder.groupBy()}">
       <div class="left_nav_item" th:if="${group.spec.displayName != ''}">
-        <a class="left_nav_link_group_title" th:href="${'/#' + group.spec.displayName}">
+        <a class="left_nav_link_group_title" th:data-target="${group.spec.displayName}" href="javascript:void(0)">
           <i th:class="${#annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill')}"></i>
           <span th:text="${group.spec.displayName}"></span>
         </a>
