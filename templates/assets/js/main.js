@@ -3,6 +3,14 @@ function showNav() {
 }
 
 document.addEventListener('DOMContentLoaded', function () {
+  initHeoLink();
+});
+
+document.addEventListener('pjax:complete', function() {
+  initHeoLink();
+});
+
+function initHeoLink() {
   const pjax = new Pjax({
     selectors: [
       "title",
@@ -12,9 +20,4 @@ document.addEventListener('DOMContentLoaded', function () {
 
   heolink.initNavLink();
   heolink.listenNavScroll();
-});
-
-document.addEventListener('pjax:complete', function() {
-  heolink.initNavLink();
-  heolink.listenNavScroll();
-});
+}

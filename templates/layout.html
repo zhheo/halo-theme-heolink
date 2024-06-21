@@ -11,7 +11,7 @@
       name="viewport"
       content="width=device-width, initial-scale=1, maximum-scale=2"
     />
-    <title th:text="${site.title}"></title>
+    <title th:text="${title != null ? title : site.title}">Heolink</title>
     <link rel="stylesheet" th:href="@{/assets/css/style.min.css?v={version}(version=${theme.spec.version})}" />
     <link th:href="@{/assets/fonts/remixicon.css}" rel="stylesheet">
     <script th:src="@{/assets/js/main.min.js?v={version}(version=${theme.spec.version})}"></script>
