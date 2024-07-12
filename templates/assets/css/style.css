@@ -122,7 +122,6 @@ img.link_group_content_item_logo_img {
 .link_group {
   display: flex;
   flex-direction: column;
-  gap: 12px;
 }
 
 .link_group_content_item_logo {
@@ -238,7 +237,7 @@ a.show_nav i {
   flex-direction: column;
   flex: 1;
   padding: 1rem;
-  gap: 1.2rem;
+  gap: 0.5rem;
   background: var(--heo-card-bg);
 }
 
@@ -380,6 +379,7 @@ span.site_info_group_desc {
   gap: 4px;
   font-size: 18px;
   line-height: 1;
+  padding: 12px 0;
 }
 
 .footer {
