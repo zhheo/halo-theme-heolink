@@ -86,7 +86,17 @@ spec:
     group: core.halo.run
     kind: Link
   formSchema:
+    - $formkit: radio
+      name: to_post_radio
+      label: 关联文章
+      help: 控制此链接是否关联文章
+      value: "true"
+      options: 
+        - label: 关联
+          value: "true"
+        - label: 不关联
+          value: "false"
     - $formkit: postSelect
       name: to_post
       label: 关联的文章
-      help: "当有关联的文章时，则跳转到对应文章，而不是直接访问地址"
+      help: "当有关联的文章时，则跳转到对应文章，而不是直接访问地址。上方的关联文章选择 关联 后有效"

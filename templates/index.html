@@ -28,23 +28,24 @@
           </div>
 
           <div class="link_group_content">
-            <a class="link_group_content_link" th:each="link : ${group.links}" :key="i" th:with="item_url = ${#annotations.contains(link, 'to_post') ? postFinder.getByName(#annotations.get(link, 'to_post')).status.permalink : link.spec.url}" th:href="${item_url}"
-            th:target="${#annotations.contains(link, 'to_post') ? '' : '_blank'}">
+            <a class="link_group_content_link" th:each="link : ${group.links}" :key="i"
+               th:with="to_post_radio = ${#annotations.get(link, 'to_post_radio')},
+                        to_post = ${#annotations.get(link, 'to_post')},
+                        shouldLinkToPost = ${to_post_radio == 'true' and to_post != null and to_post != ''},
+                        item_url = ${shouldLinkToPost ? postFinder.getByName(to_post).status.permalink : link.spec.url}"
+               th:href="${item_url}"
+               th:target="${shouldLinkToPost ? '' : '_blank'}">
               <div class="link_group_content_item">
                 <div class="link_group_content_item_logo">
                   <img class="link_group_content_item_logo_img"
                        th:with="icon_api= ${theme.config.info.icon_api ?: 'https://api.zhheo.com/favicon/get.php?url={url}'}, 
-                                 item_url=${item_url}, 
-                                 isRelativeUrl=${item_url.startsWith('/')},
-                                 custom_logo=${link.spec.logo},
-                                 used_logo= ${custom_logo ?: icon_api.replace('{url}', item_url)},
-                                 used_site_logo = ${custom_logo ?: (site.favicon ?: #theme.assets('/images/logo_cover.jpg'))}
-                                ",
+                                isRelativeUrl=${item_url.startsWith('/')},
+                                custom_logo=${link.spec.logo},
+                                used_logo= ${custom_logo ?: icon_api.replace('{url}', item_url)},
+                                used_site_logo = ${custom_logo ?: (site.favicon ?: #theme.assets('/images/logo_cover.jpg'))}"
                        th:src="${isRelativeUrl ? used_site_logo : used_logo}"
                        th:alt="${link.spec.displayName}" loading="lazy"/>
                 </div>
-                
-                             
                 <div class="link_group_content_item_info">
                   <div class="link_group_content_item_info_content">
                     <p class="link_group_content_item_info_content_title" th:text="${link.spec.displayName}"></p>
@@ -53,8 +54,7 @@
                 </div>
               </div>
             </a>
-          </div>
-        </div>
+          </div>          
 
       </th:block>
     </div>
