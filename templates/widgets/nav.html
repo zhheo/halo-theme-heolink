@@ -10,7 +10,7 @@
     <img th:src="${site.logo ?: #theme.assets('/images/logo_cover.jpg')}" alt="logo" />
   </a>
   <div class="left_nav_group" id="left_nav_group">
-    <th:block th:each="group : ${linkFinder.groupBy()}">
+    <th:block th:each="group : ${linkFinder.groupBy()}" th:if="${#annotations.getOrDefault(group, 'show_on_heolink', 'true') == 'true'}">
       <div class="left_nav_item" th:if="${group.spec.displayName != ''}">
         <a class="left_nav_link_group_title" th:data-target="${group.spec.displayName}" href="javascript:void(0)">
           <i th:class="${#annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill')}"></i>
@@ -31,7 +31,7 @@
     </div>
 
     <div class="footer_console">
-      <a href="/console/login" target="_blank" title="管理后台">
+      <a href="/login" target="_blank" title="管理后台">
         <i class="ri-settings-4-fill"></i>
       </a>
       <a href="https://github.com/zhheo/halo-theme-heolink" target="_blank" class="theme_info" title="Theme HeoLink by Halo">Theme HeoLink by Halo</a>
