@@ -21,7 +21,7 @@
       <th:block th:replace="${head}" />
     </th:block>
   </head>
-  <body th:style="'background-color: '+${theme.config.style.background_color ?: '#f2f2f2'}">
+  <body th:style="'background-color: '+${theme.config.style.background_color ?: '#f2f2f2'}" th:with="logon = ${#authentication.name != 'anonymousUser'}">
     <section>
       <div class="heolink_site"  th:if="${pluginFinder.available('PluginLinks')}">
         <th:block
