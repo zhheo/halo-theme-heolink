@@ -16,7 +16,7 @@ spec:
   issues: "https://github.com/zhheo/halo-theme-heolink/issues"
   settingName: "theme-heolink-setting"
   configMapName: "theme-heolink-configMap"
-  version: "0.10"
+  version: "0.11"
   requires: ">=2.20.0"
   license:
     - name: "Apache-2.0"

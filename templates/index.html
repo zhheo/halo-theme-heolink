@@ -5,7 +5,7 @@
 
 
     <div class="linkPage_content">
-      <div class="site_info_group">
+      <div class="site_info_group" th:if="${theme.config.style.show_cover_img == 'true'}">
         <div class="site_info_text">
           <h1 class="site_info_group_title" th:text="${site.title}"></h1>
           <span class="site_info_group_desc" th:text="${site.subtitle}"></span>

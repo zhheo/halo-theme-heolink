@@ -43,6 +43,16 @@ spec:
     - group: style
       label: 样式
       formSchema:
+        - $formkit: radio
+          name: show_cover_img
+          label: 显示背景图片
+          help: 控制首页是否显示背景图片
+          value: "true"
+          options:
+            - label: 显示
+              value: "true" 
+            - label: 不显示
+              value: "false"
         - $formkit: attachment
           name: cover_img
           value: /themes/theme-heolink/assets/images/index_cover2.jpg
