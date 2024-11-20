@@ -393,6 +393,8 @@ span.site_info_group_desc {
   background: var(--heo-card-bg);
   width: 100%;
   height: 100px;
+  justify-content: flex-end;
+  padding-bottom: 16px;
 }
 
 .footer a {
