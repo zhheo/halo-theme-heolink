@@ -19,7 +19,8 @@
         th:replace="~{widgets/search}"
       />
 
-      <th:block th:each="group : ${linkFinder.groupBy()}" th:if="${#annotations.getOrDefault(group, 'show_on_heolink', 'true') == 'true'}">
+      <th:block th:each="group : ${linkFinder.groupBy()}"
+                th:if="${#annotations.getOrDefault(group, 'show_on_heolink', 'true') == 'true' and (#annotations.getOrDefault(group, 'show_group_anonymous', 'false') != 'true' or #annotations.getOrDefault(group, 'show_group_anonymous', 'false') == 'true' and logon)}">
         <div class="link_group" th:if="${#lists.size(group.links) > 0}">
           <div class="link_group_title_content" th:if="${group.spec.displayName != ''}" >
             <i th:class="${#annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill')}"></i>
@@ -34,7 +35,8 @@
                         shouldLinkToPost = ${to_post_radio == 'true' and to_post != null and to_post != ''},
                         item_url = ${shouldLinkToPost ? postFinder.getByName(to_post).status.permalink : link.spec.url}"
                th:href="${item_url}"
-               th:target="${shouldLinkToPost ? '' : '_blank'}">
+               th:target="${shouldLinkToPost ? '' : '_blank'}"
+               th:if="${(#annotations.getOrDefault(link, 'show_link_anonymous', 'false') != 'true' or #annotations.getOrDefault(link, 'show_link_anonymous', 'false') == 'true' and logon)}">
               <div class="link_group_content_item">
                 <div class="link_group_content_item_logo">
                   <img class="link_group_content_item_logo_img"

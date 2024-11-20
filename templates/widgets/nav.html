@@ -10,7 +10,8 @@
     <img th:src="${site.logo ?: #theme.assets('/images/logo_cover.jpg')}" alt="logo" />
   </a>
   <div class="left_nav_group" id="left_nav_group">
-    <th:block th:each="group : ${linkFinder.groupBy()}" th:if="${#annotations.getOrDefault(group, 'show_on_heolink', 'true') == 'true'}">
+    <th:block th:each="group : ${linkFinder.groupBy()}"
+              th:if="${#annotations.getOrDefault(group, 'show_on_heolink', 'true') == 'true' && (#annotations.getOrDefault(group, 'show_group_anonymous', 'false') != 'true' || #annotations.getOrDefault(group, 'show_group_anonymous', 'false') == 'true' && logon)}">
       <div class="left_nav_item" th:if="${group.spec.displayName != ''}">
         <a class="left_nav_link_group_title" th:data-target="${group.spec.displayName}" href="javascript:void(0)">
           <i th:class="${#annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill')}"></i>

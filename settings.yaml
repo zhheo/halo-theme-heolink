@@ -74,6 +74,16 @@ spec:
           value: "true"
         - label: 不显示
           value: "false"
+    - $formkit: radio
+      name: show_group_anonymous
+      label: 分组是否登录可见
+      help: 控制此分组是否登录可见
+      value: "false"
+      options:
+        - label: 是
+          value: "true"
+        - label: 否
+          value: "false"
 
 ---
 
@@ -100,3 +110,13 @@ spec:
       name: to_post
       label: 关联的文章
       help: "当有关联的文章时，则跳转到对应文章，而不是直接访问地址。上方的关联文章选择 关联 后有效"
+    - $formkit: radio
+      name: show_link_anonymous
+      label: 链接是否登录可见
+      help: 控制此链接是否登录可见
+      value: "false"
+      options:
+        - label: 是
+          value: "true"
+        - label: 否
+          value: "false"
