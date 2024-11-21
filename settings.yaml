@@ -110,7 +110,7 @@ spec:
       name: to_post_radio
       label: 关联文章
       help: 控制此链接是否关联文章
-      value: "true"
+      value: "false"
       options: 
         - label: 关联
           value: "true"
