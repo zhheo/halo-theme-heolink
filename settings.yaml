@@ -45,6 +45,7 @@ spec:
       formSchema:
         - $formkit: radio
           name: show_cover_img
+          id: show_cover_img
           label: 显示背景图片
           help: 控制首页是否显示背景图片
           value: "true"
@@ -55,6 +56,7 @@ spec:
               value: "false"
         - $formkit: attachment
           name: cover_img
+          if: $get(show_cover_img).value == "true"
           value: /themes/theme-heolink/assets/images/index_cover2.jpg
           label: 首页背景图片
 
@@ -108,6 +110,7 @@ spec:
   formSchema:
     - $formkit: radio
       name: to_post_radio
+      id: to_post_radio
       label: 关联文章
       help: 控制此链接是否关联文章
       value: "false"
@@ -118,6 +121,7 @@ spec:
           value: "false"
     - $formkit: postSelect
       name: to_post
+      if: $get(to_post_radio).value == "true"
       label: 关联的文章
       help: "当有关联的文章时，则跳转到对应文章，而不是直接访问地址。上方的关联文章选择 关联 后有效"
     - $formkit: radio
