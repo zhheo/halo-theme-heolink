@@ -161,6 +161,7 @@ img.link_group_content_item_logo_img {
 a.link_group_content_link {
   display: flex;
   width: calc(100% / 4 - 8px);
+  max-width: 360px;
   height: 80px;
   color: var(--heo-fontcolor);
   border-radius: 12px;
