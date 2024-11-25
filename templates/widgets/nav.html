@@ -32,7 +32,7 @@
     </div>
 
     <div class="footer_console">
-      <a href="/login" target="_blank" title="管理后台">
+      <a th:href="${logon ? '/console' : '/login?redirect_uri=/'}" th:target="${logon ? '_blank' : '_self'}" title="管理后台">
         <i class="ri-settings-4-fill"></i>
       </a>
       <a href="https://github.com/zhheo/halo-theme-heolink" target="_blank" class="theme_info" title="Theme HeoLink by Halo">Theme HeoLink by Halo</a>
