@@ -12,6 +12,10 @@ spec:
       label: 信息
       formSchema:
         - $formkit: text
+          name: index_title
+          label: 导航标题
+          help: 可以自定义为页面标题，留空则使用站点标题
+        - $formkit: text
           name: index_icp
           label: 备案号
           help: 在中国大陆可以访问的网站应填写备案号

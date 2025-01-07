@@ -12,6 +12,14 @@
 
 ![](/imgs/quickshot.jpg)
 
+## 单页
+
+如果安装其他主题，此导航作为单独页面使用，可以首页添加参数
+
+首页url添加preview-theme=theme-heolink参数，例如
+
+`https://halo.zhheo.com/?preview-theme=theme-heolink`
+
 ## 特性
 
 此主题需要安装Halo的官方插件“链接管理”然后进行操作。
