@@ -19,6 +19,13 @@
         </a>
       </div>
     </th:block>
+    <div class="left_nav_item nav_postchat"> 
+      <a th:if="${pluginFinder.available('postchat')}" class="left_nav_link_group_title notneedjump" onclick="postChatUser.setPostChatTag('chat');return false;">
+        <i class="ri-chat-ai-fill"></i>
+        <span th:text="${theme.config.extension.postchat_button_text ?: '智能对话'}">智能对话</span>
+      </a>
+    </div>
+
   </div>
 
   <div class="footer">

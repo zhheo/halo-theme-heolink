@@ -63,6 +63,14 @@ spec:
           if: $get(show_cover_img).value == "true"
           value: /themes/theme-heolink/assets/images/index_cover2.jpg
           label: 首页背景图片
+    - group: extension
+      label: 扩展
+      formSchema:
+        - $formkit: text
+          name: postchat_button_text
+          label: PostChat智能对话按钮文本
+          value: "智能对话"
+          help: 在使用PostChat插件时，智能对话按钮的文本
 
 ---
 

@@ -284,6 +284,7 @@ a.left_nav_link_group_title {
   justify-content: left;
   font-size: 16px;
   align-items: center;
+  cursor: pointer;
 }
 
 a.left_nav_link_group_title i {
@@ -554,6 +555,14 @@ a.post_bar_back {
   position: relative;
   height: fit-content;
   min-height: 200px;
+}
+
+li {
+  list-style: none;
+}
+
+.nav_postchat {
+  margin-top: auto;
 }
 
 @media (hover:hover) {

@@ -14,8 +14,8 @@
     <title th:text="${title != null ? title : site.title}">Heolink</title>
     <link rel="stylesheet" th:href="@{/assets/css/style.css?v={version}(version=${theme.spec.version})}" />
     <link th:href="@{/assets/fonts/remixicon.css}" rel="stylesheet">
-    <script th:src="@{/assets/js/main.min.js?v={version}(version=${theme.spec.version})}"></script>
-    <script th:src="@{/assets/js/heolink.min.js?v={version}(version=${theme.spec.version})}"></script>
+    <script th:src="@{/assets/js/main.js?v={version}(version=${theme.spec.version})}"></script>
+    <script th:src="@{/assets/js/heolink.js?v={version}(version=${theme.spec.version})}"></script>
     <script th:src="@{/assets/js/pjax.min.js}"></script>
     <th:block th:if="${head != null}">
       <th:block th:replace="${head}" />

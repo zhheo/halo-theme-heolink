@@ -1,10 +1,11 @@
 var heolink = {
   initNavLink: function() {
-    // 获取所有的导航链接
-    const navLinks = document.querySelectorAll(".left_nav_link_group_title");
+    // 获取所有的导航链接，排除nav_postchat类
+    const navLinks = document.querySelectorAll(".left_nav_link_group_title:not(.notneedjump)");
   
     // 为每个链接添加点击事件监听器
     navLinks.forEach(link => {
+
       link.addEventListener("click", function (event) {
         event.preventDefault(); // 阻止默认的链接跳转行为
   
