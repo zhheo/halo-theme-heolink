@@ -546,6 +546,16 @@ a.post_bar_back {
   top: 4px;
 }
 
+#halo-comment {
+  width: 100%;
+  padding: 0 24px;
+  max-width: 900px;
+  display: block;
+  position: relative;
+  height: fit-content;
+  min-height: 200px;
+}
+
 @media (hover:hover) {
   a.link_group_content_link:hover {
     background: var(--heo-theme);

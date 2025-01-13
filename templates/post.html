@@ -16,6 +16,13 @@
 
     <img th:if="${post.spec.cover != ''}" th:src="${post.spec.cover}" th:alt="${post.spec.title}" class="postPage_cover" />
     <article th:utext="${post.content.content}"></article>
+    <div th:if="${haloCommentEnabled}" id="halo-comment">
+      <halo:comment
+          group="content.halo.run"
+          kind="Post"
+          th:attr="name=${post.metadata.name}"
+      />
+    </div>
   </div>
 </th:block>
 
