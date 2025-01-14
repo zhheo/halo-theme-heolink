@@ -77,3 +77,10 @@ var heolink = {
     });
   }
 };
+
+function hideNav() {
+  const navList = document.getElementById('nav_list');
+  if (navList.classList.contains('active')) {
+    navList.classList.remove('active');
+  }
+}

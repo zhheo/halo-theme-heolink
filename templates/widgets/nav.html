@@ -2,7 +2,7 @@
   <a class="show_nav" onclick="showNav()" href="javascript:void(0)">
     <i class="ri-menu-line"></i>
   </a>
-  <span class="nav_site_name" th:text="${site.title}"></span>
+  <a class="nav_site_name" href="/#" th:text="${site.title}"></a>
 </div>
 
 <div class="nav_list" id="nav_list">
@@ -13,7 +13,7 @@
     <th:block th:each="group : ${linkFinder.groupBy()}"
               th:if="${#annotations.getOrDefault(group, 'show_on_heolink', 'true') == 'true' && (#annotations.getOrDefault(group, 'show_group_anonymous', 'false') != 'true' || #annotations.getOrDefault(group, 'show_group_anonymous', 'false') == 'true' && logon)}">
       <div th:class="${#annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill') == 'ri-' || #annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill') == '' ? 'left_nav_item nav_center' : 'left_nav_item'}" th:if="${group.spec.displayName != ''}">
-        <a class="left_nav_link_group_title" th:data-target="${group.spec.displayName}" href="javascript:void(0)">
+        <a class="left_nav_link_group_title" th:data-target="${group.spec.displayName}" href="javascript:void(0)" onclick="hideNav()">
           <i th:if="${#annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill') != 'ri-' && #annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill') != ''}" th:class="${#annotations.getOrDefault(group, 'icon', 'ri-archive-stack-fill')}"></i>
           <span th:text="${group.spec.displayName}"></span>
         </a>

@@ -82,6 +82,7 @@ body {
   line-height: 1.5;
   margin: 0;
   padding: 0;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
 }
 
 a {
@@ -213,6 +214,12 @@ p.link_group_content_item_info_content_description {
 
 a.show_nav i {
   font-size: 18px;
+  color: var(--heo-fontcolor);
+}
+
+.nav_site_name {
+  color: var(--heo-fontcolor);
+  font-size: 16px;
 }
 
 .post_title {
@@ -424,6 +431,7 @@ span.site_info_group_desc {
   border: var(--style-border-always);
   padding: 0px 12px;
   padding-left: 44px;
+  font-size: 16px;
 }
 
 #searchForm input:focus-visible {
