@@ -423,7 +423,7 @@ span.site_info_group_desc {
   border-radius: 16px;
   border: var(--style-border-always);
   padding: 0px 12px;
-  padding-left: 16px;
+  padding-left: 44px;
 }
 
 #searchForm input:focus-visible {
@@ -563,6 +563,26 @@ li {
 
 .nav_postchat {
   margin-top: auto;
+}
+
+.widget_search {
+  position: relative;
+}
+
+.search-engine-icon {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search-engine-icon img {
+  width: 20px;
+  height: 20px;
 }
 
 @media (hover:hover) {

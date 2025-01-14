@@ -1,5 +1,15 @@
 <div class="widget_search" th:if="${theme.config.info.search_engine != ''}" >
   <form id="searchForm" method="get">
+    <div class="search-engine-icon">
+      <img th:if="${theme.config.info.search_engine.contains('baidu')}" 
+           th:src="@{/assets/images/search/baidu.svg}" alt="百度搜索">
+      <img th:if="${theme.config.info.search_engine.contains('google')}"
+           th:src="@{/assets/images/search/google.svg}" alt="谷歌搜索">
+      <img th:if="${theme.config.info.search_engine.contains('bing')}"
+           th:src="@{/assets/images/search/bing.svg}" alt="必应搜索">
+      <img th:if="${theme.config.info.search_engine.contains('sogou')}"
+           th:src="@{/assets/images/search/sougou.svg}" alt="搜狗搜索">
+    </div>
     <input type="text" id="searchInput" placeholder="输入搜索内容...">
     <button type="submit">
       <i class="ri-search-2-line"></i>
@@ -8,17 +18,13 @@
   
   <script th:inline="javascript">
     //<![CDATA[
-    // 使用 Thymeleaf 变量
     var searchEngineUrl = /*[[${theme.config.info.search_engine}]]*/ 'defaultURL';
   
-    // DOM 完全加载后运行
     document.addEventListener('DOMContentLoaded', function() {
-        // 解析 URL 来找到基础路径和参数名
         var urlParts = searchEngineUrl.split('?');
         var baseUrl = urlParts[0];
         var paramName = urlParts.length > 1 ? urlParts[1].split('=')[0] : '';
   
-        // 设置表单的 action 和输入框的 name
         var form = document.getElementById('searchForm');
         var input = document.getElementById('searchInput');
   

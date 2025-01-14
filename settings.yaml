@@ -66,6 +66,16 @@ spec:
     - group: extension
       label: 扩展
       formSchema:
+        - $formkit: radio
+          name: postchat_enable
+          label: PostChat智能对话按钮
+          help: 控制是否启用PostChat智能对话按钮
+          value: "true"
+          options:
+            - label: 启用
+              value: "true"
+            - label: 不启用
+              value: "false"
         - $formkit: text
           name: postchat_button_text
           label: PostChat智能对话按钮文本
