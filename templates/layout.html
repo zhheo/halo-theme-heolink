@@ -13,7 +13,7 @@
     />
     <title th:text="${title != null ? title : site.title}">Heolink</title>
     <link rel="stylesheet" th:href="@{/assets/css/style.css?v={version}(version=${theme.spec.version})}" />
-    <link th:href="@{/assets/fonts/remixicon.css}" rel="stylesheet">
+    <link th:href="@{/assets/fonts/remixicon.css?v={version}(version=${theme.spec.version})}" rel="stylesheet">
     <script th:src="@{/assets/js/main.js?v={version}(version=${theme.spec.version})}"></script>
     <script th:src="@{/assets/js/heolink.js?v={version}(version=${theme.spec.version})}"></script>
     <script th:src="@{/assets/js/pjax.min.js}"></script>
