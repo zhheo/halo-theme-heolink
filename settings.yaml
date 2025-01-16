@@ -31,9 +31,9 @@ spec:
           options: 
             - label: 关闭
               value: ""
-            - label: PostChat(需要PostChat插件)
+            - label: PostChat (需要PostChat插件)
               value: "postchat"
-            - label: 本地（需要搜索组件插件）
+            - label: 本地 (需要搜索组件插件)
               value: "local"
             - label: 百度
               value: "https://www.baidu.com/s?wd="
