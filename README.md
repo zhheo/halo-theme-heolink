@@ -8,7 +8,7 @@
 
 ## 预览
 
-![](https://github.com/user-attachments/assets/87b32ef2-7d73-42a0-9767-c8e42063b548)
+![洪墨导航](https://github.com/user-attachments/assets/f6729ceb-5391-455c-ae70-9047d52036b4)
 
 [预览地址](https://halo.zhheo.com/)
 
