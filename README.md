@@ -1,4 +1,4 @@
-<div align="center" style="margin-bottom: 20px;">
+<div align="center">
     <a href="https://halo.zhheo.com/" target="_blank" rel="noopener noreferrer">
         <img src="/imgs/st.jpg" alt="icon"/>
     </a>
@@ -6,9 +6,9 @@
     <span>一个基于导航管理插件的主题，用于快捷搭建一个简约的导航站。</span>
 </div>
 
-![](https://github.com/user-attachments/assets/87b32ef2-7d73-42a0-9767-c8e42063b548)
-
 ## 预览
+
+![](https://github.com/user-attachments/assets/87b32ef2-7d73-42a0-9767-c8e42063b548)
 
 [预览地址](https://halo.zhheo.com/)
 
